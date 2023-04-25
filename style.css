@@ -1,4 +1,4 @@
-.grid {
+.square {
     margin: 0;
     border: 1px solid black;
     height: 20px;
@@ -10,4 +10,8 @@
     flex-wrap: wrap;
     height: 352px;
     width: 352px;
+}
+
+.pink {
+    background-color: pink;
 }
