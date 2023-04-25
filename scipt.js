@@ -7,6 +7,18 @@ button.addEventListener('click', createGrid);
 const eraser = document.querySelector('.eraser');
 eraser.addEventListener('click', eraseSquare);
 
+const blackButton = document.querySelector('.blackButton');
+blackButton.addEventListener('click', colorBlackAgain);
+
+function colorBlackAgain() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', (e) => {
+            square.classList.remove('eraser');
+        });
+    })
+}
+
 function eraseSquare() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
