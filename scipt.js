@@ -1,10 +1,22 @@
 const container = document.querySelector('.container');
 const containerSideSize = container.offsetHeight;
 
-const button = document.querySelector('button');
+const button = document.querySelector('.create');
 button.addEventListener('click', createGrid);
 
-function colorSquare(e) {
+const eraser = document.querySelector('.eraser');
+eraser.addEventListener('click', eraseSquare);
+
+function eraseSquare() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', (e) => {
+            square.classList.add('eraser');
+        });
+    })
+}
+
+function colorBlack(e) {
     this.classList.add('black');
 }
 
@@ -24,7 +36,7 @@ function createGrid() {
 
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
-        square.addEventListener('mouseover', colorSquare);
+        square.addEventListener('mouseover', colorBlack);
         square.classList.add('square');
         square.style.height = squareSideSize;
         square.style.width = squareSideSize;
