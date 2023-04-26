@@ -1,11 +1,11 @@
 const container = document.querySelector('.container');
 const containerSideSize = container.offsetHeight;
 
-const button = document.querySelector('.create');
-button.addEventListener('click', createGrid);
+const createGridButton = document.querySelector('.create');
+createGridButton.addEventListener('click', createGrid);
 
-const eraser = document.querySelector('.eraser');
-eraser.addEventListener('click', eraseSquare);
+const eraserButton = document.querySelector('.eraserButton');
+eraserButton.addEventListener('click', eraseSquare);
 
 const blackButton = document.querySelector('.blackButton');
 blackButton.addEventListener('click', colorBlackAgain);
