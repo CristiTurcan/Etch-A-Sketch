@@ -5,13 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat:wght@300&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="./scipt.js" defer></script>
 </head>
 <body>
-    <button class="create">Enter a grid size</button>
-    <button class="blackButton">Black</button>
-    <button class="eraserButton">Eraser</button>
+    <div class="title">Etch-A-Sketch</div>
+    <div class="commandContainer">
+        <button class="create">Enter a grid size</button>
+        <button class="blackButton">Black</button>
+        <button class="eraserButton">Eraser</button>
+        <span class="switchContainer">
+            <span>Grid Toggle ON/OFF</span>
+            <label class="switch">
+                <input type="checkbox" name="gridToggle">
+                <span class="slider round"></span>
+            </label>
+        </span>
+    </div>
     <div class="container"></div>
 </body>
 </html>

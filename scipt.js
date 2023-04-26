@@ -10,6 +10,23 @@ eraserButton.addEventListener('click', eraseSquare);
 const blackButton = document.querySelector('.blackButton');
 blackButton.addEventListener('click', colorBlackAgain);
 
+const gridToggle = document.querySelector('input[name=gridToggle]');
+gridToggle.addEventListener('change', toggleGridOnOff);
+
+function toggleGridOnOff(e) {
+    const squares = document.querySelectorAll('.square');
+    if(this.checked === true) {
+        squares.forEach((square) => {
+            square.classList.add('addBorder');
+        });
+    } else {
+        squares.forEach((square) => {
+            square.classList.remove('addBorder');
+        });
+    }
+    console.log(this.checked === true);
+};
+
 function colorBlackAgain() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
@@ -44,7 +61,7 @@ function enterGridSize() {
 function createGrid() {
     container.innerHTML = ''; // delete the previous grid
     const size = enterGridSize();
-    const squareSideSize = containerSideSize / size - 2 + 'px';
+    const squareSideSize = containerSideSize / size + 'px';
 
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
@@ -53,5 +70,9 @@ function createGrid() {
         square.style.height = squareSideSize;
         square.style.width = squareSideSize;
         container.appendChild(square);
+
+        // check grid
+        if (gridToggle.checked === true) square.classList.add('addBorder');
+        else square.classList.remove('addBorder');
     }
 }
